@@ -1,6 +1,13 @@
 import threading
 def wait(timeToSleep):
     import time
-    time.sleep(timeToSleep)
+    timedef1 = time.perf_counter()
+    while timedef2 <= timedef1 + timeToSleep:
+        timedef2 = time.perf_counter()
     print(timeToSleep + 's waited')
-t1 = threading.Thread(target=wait,args=(1,))
+pool = concurrent.futures.ThreadPoolExecutor(max_workers=2)
+
+pool.submit(wait,1)
+pool.submit(wait,5)
+
+pool.shutdown(wait=True)
