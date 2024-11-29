@@ -5,8 +5,8 @@ def wait(timeToSleep):
     import time
     timedef1 = time.perf_counter()
     timedef2 = 0
-    while timedef2 <= timedef1 + timeToSleep:
-        timedef2 = time.perf_counter()
+    while time.perf_counter() <= timedef1 + timeToSleep:
+        timedef2 = timedef2
     print(str(timeToSleep) + 's waited')
 timers = int(input('how many timers do you want: '))
 for i in range(timers):
