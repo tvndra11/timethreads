@@ -11,7 +11,7 @@ def wait(timeToSleep):
 timers = int(input('how many timers do you want: '))
 for i in range(timers):
     timerlen.append(int(input('how long for timer')))
-pool = concurrent.futures.ThreadPoolExecutor(max_workers=2)
+pool = concurrent.futures.ThreadPoolExecutor(max_workers=timers)
 for i in range(timers):
     pool.submit(wait,timerlen[i])
 pool.shutdown(wait=True)
