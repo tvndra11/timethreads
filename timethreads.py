@@ -7,11 +7,10 @@ def wait(timeToSleep):
     timedef2 = 0
     while timedef2 <= timedef1 + timeToSleep:
         timedef2 = time.perf_counter()
-        print('e')
-    print(timeToSleep + 's waited')
+    print(str(timeToSleep) + 's waited')
 timers = int(input('how many timers do you want: '))
 for i in range(timers):
-    timerlen.append(int(input('how long for timer',i+1)))
+    timerlen.append(int(input('how long for timer')))
 pool = concurrent.futures.ThreadPoolExecutor(max_workers=2)
 for i in range(timers):
     pool.submit(wait,timerlen[i])
